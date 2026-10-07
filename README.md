@@ -1,5 +1,9 @@
 # Монополия — мультиплеер в браузере
 
+![Node](https://img.shields.io/badge/node-18%2B-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![tests](https://img.shields.io/badge/tests-52%20passing-success)
+
 Русская «Монополия» для 2–6 игроков в реальном времени. Сервер на Node.js, клиент —
 обычный браузер, связь по WebSocket. Без фреймворков на фронте и без базы данных:
 состояние партии живёт на сервере и восстанавливается после перезапуска.
