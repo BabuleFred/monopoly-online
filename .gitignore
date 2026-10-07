@@ -1,0 +1,10 @@
+node_modules/
+data/game-state.json
+tmp/
+*.log
+ngrok.exe
+cloudflared.exe
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

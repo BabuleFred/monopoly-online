@@ -1,0 +1,16 @@
+{
+  "name": "monopoly-ru",
+  "version": "0.1.0",
+  "description": "Русская Монополия — мультиплеер в браузере",
+  "type": "commonjs",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test test/*.test.js",
+    "tunnel:ngrok": "ngrok http 3000",
+    "tunnel:cloudflared": "cloudflared tunnel --url http://localhost:3000"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

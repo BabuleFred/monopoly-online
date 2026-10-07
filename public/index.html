@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Монополия</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="rules-link" href="rules.html" target="_blank">Правила</a>
+  <!-- Экран входа -->
+  <section id="screen-entry" class="screen">
+    <h1>Монополия</h1>
+    <div class="tabs">
+      <button id="tab-create" class="tab active">Создать игру</button>
+      <button id="tab-join" class="tab">Войти в игру</button>
+    </div>
+    <div id="form-create" class="form">
+      <label>Ваше имя<input id="create-name" maxlength="16"></label>
+      <label>Фишка
+        <select id="create-token"></select>
+      </label>
+      <button id="btn-create">Создать игру</button>
+    </div>
+    <div id="form-join" class="form hidden">
+      <label>Код комнаты<input id="join-code" maxlength="6" style="text-transform:uppercase"></label>
+      <label>Ваше имя<input id="join-name" maxlength="16"></label>
+      <label>Фишка
+        <select id="join-token"></select>
+      </label>
+      <button id="btn-join">Войти</button>
+    </div>
+    <p id="entry-error" class="error hidden"></p>
+  </section>
+
+  <!-- Лобби -->
+  <section id="screen-lobby" class="screen hidden">
+    <h2>Лобби</h2>
+    <p>Код комнаты: <strong id="lobby-code"></strong> — сообщите его друзьям</p>
+    <ul id="lobby-players"></ul>
+    <button id="btn-start" disabled>Начать игру</button>
+    <p id="lobby-hint" class="hint hidden">Минимум 2 игрока для старта</p>
+  </section>
+
+  <!-- Экран игры -->
+  <section id="screen-game" class="screen game-screen hidden">
+    <header class="game-header">
+      <h2>Монополия</h2>
+      <p id="game-state-info"></p>
+      <p id="game-last-action" class="hint"></p>
+    </header>
+
+    <canvas id="board-canvas" width="720" height="720" aria-label="Игровое поле"></canvas>
+
+    <section class="panel">
+      <div class="dice-row">
+        <strong>Кубики:</strong>
+        <span id="dice-value">—</span>
+      </div>
+      <button id="btn-roll" disabled>Бросить кубики</button>
+      <div id="jail-actions" class="property-actions hidden">
+        <p>Вы в тюрьме. Можно заплатить 50₽ или использовать карточку.</p>
+        <div class="action-row">
+          <button id="btn-pay-jail">Заплатить 50₽</button>
+          <button id="btn-use-jail-card" class="secondary">Карточка</button>
+        </div>
+      </div>
+      <div id="property-actions" class="property-actions hidden">
+        <p id="property-offer"></p>
+        <div class="action-row">
+          <button id="btn-buy">Купить</button>
+          <button id="btn-decline" class="secondary">Отказаться</button>
+        </div>
+      </div>
+      <div id="auction-actions" class="property-actions hidden">
+        <p id="auction-info"></p>
+        <div class="action-row">
+          <input id="auction-bid" type="number" min="10" step="10" placeholder="Ставка">
+          <button id="btn-bid">Ставка</button>
+          <button id="btn-pass-bid" class="secondary">Пас</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Игроки</h3>
+      <ul id="game-players"></ul>
+    </section>
+
+    <section class="panel">
+      <h3>Моя собственность</h3>
+      <ul id="owned-properties"></ul>
+    </section>
+
+    <section class="panel">
+      <h3>Обмены</h3>
+      <ul id="trade-list"></ul>
+    </section>
+  </section>
+
+  <script src="net.js"></script>
+  <script src="board.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>

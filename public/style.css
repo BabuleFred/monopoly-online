@@ -1,0 +1,38 @@
+:root { --accent:#e74c3c; --bg:#1b1b2b; --card:#2d2d44; --txt:#eee; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:system-ui,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--txt); }
+.rules-link { position:fixed; top:10px; right:10px; z-index:10; color:#fff; background:#444; padding:8px 10px; border-radius:8px; text-decoration:none; font-size:14px; }
+.screen { max-width:480px; margin:0 auto; padding:16px; min-height:100vh; display:flex; flex-direction:column; }
+h1,h2 { text-align:center; }
+h3 { margin:0 0 8px; }
+.tabs { display:flex; gap:8px; margin:16px 0; }
+.tab { flex:1; padding:10px; border:1px solid #555; background:transparent; color:var(--txt); border-radius:8px; cursor:pointer; }
+.tab.active { background:var(--accent); border-color:var(--accent); }
+.form { display:flex; flex-direction:column; gap:12px; }
+label { display:flex; flex-direction:column; gap:6px; font-size:14px; }
+input,select { padding:10px; border-radius:8px; border:1px solid #555; background:#1b1b2b; color:var(--txt); font-size:16px; }
+button { padding:12px; border:0; border-radius:8px; background:var(--accent); color:#fff; font-size:16px; cursor:pointer; }
+button:disabled { background:#555; cursor:not-allowed; }
+.hidden { display:none !important; }
+.error { color:#ff6b6b; }
+.hint { color:#999; font-size:13px; text-align:center; }
+#lobby-players, #game-players, #owned-properties, #trade-list { list-style:none; padding:0; margin:0; }
+#lobby-players li, #game-players li, #owned-properties li, #trade-list li { padding:8px; background:var(--card); border-radius:8px; margin-bottom:6px; display:flex; justify-content:space-between; gap:8px; }
+.property-buttons { display:flex; flex-wrap:wrap; gap:4px; justify-content:flex-end; }
+.property-buttons button { padding:6px 8px; font-size:12px; }
+#lobby-code { font-size:24px; letter-spacing:3px; color:var(--accent); }
+.game-screen { max-width:760px; gap:12px; }
+.game-header h2 { margin-bottom:4px; }
+.game-header p { margin:4px 0; }
+#board-canvas { width:100%; max-width:720px; aspect-ratio:1/1; background:#f7f1df; border:4px solid #111; border-radius:10px; align-self:center; }
+.panel { background:rgba(45,45,68,.9); border:1px solid #444; border-radius:10px; padding:12px; }
+.dice-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+#dice-value { font-size:22px; color:#f1c40f; }
+.player-money { color:#2ecc71; }
+.player-pos { color:#bbb; font-size:12px; }
+.current-player { outline:2px solid #f1c40f; }
+.property-actions { margin-top:12px; padding-top:12px; border-top:1px solid #555; }
+.property-actions p { margin:0 0 10px; }
+.action-row { display:flex; gap:8px; }
+.action-row button { flex:1; }
+button.secondary { background:#555; }
